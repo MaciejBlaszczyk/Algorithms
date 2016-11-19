@@ -1,6 +1,7 @@
 def function(x):
     return x * x * x + 5 * x + 1
 
+
 def bisection_method():
     point1 = -1
     point2 = 1
@@ -10,9 +11,7 @@ def bisection_method():
     if value1 * value2 > 0:
         print("Error, wrong points")
         return -1
-    while 1:
-        if abs(value1 - value2) < accuracy:
-            return point1
+    while abs(point1 - point2) > accuracy:
         root = (point1 + point2) / 2
         root_value = function(root)
         if abs(root_value) < accuracy:
@@ -22,5 +21,6 @@ def bisection_method():
         else:
             point1 = root
             value1 = root_value
+    return point1
 
 print(bisection_method())
