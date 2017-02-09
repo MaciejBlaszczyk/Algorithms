@@ -2,15 +2,15 @@ def function(x):
     return x * x * x + 5 * x + 1
 
 
-def function_derivative(x):
+def functionDerivative(x):
     return 3 * x * x + 5
 
 
-def function_second_derivative(x):
+def functionSecondDerivative(x):
     return 6 * x
 
 
-def secant_method():
+def secantMethod():
     start = -1
     end = 1
     accuracy = 0.0001
@@ -18,7 +18,7 @@ def secant_method():
     if function(start) * function(end) > 0:
         print("Error, wrong points")
         return -1
-    if function(start) * function_second_derivative(end) > 0:
+    if function(start) * functionSecondDerivative(end) > 0:
         point2 = start
         point1 = end
     else:
@@ -32,6 +32,6 @@ def secant_method():
         root = point1
     return root
 
-print(secant_method())
+print(secantMethod())
 
 
