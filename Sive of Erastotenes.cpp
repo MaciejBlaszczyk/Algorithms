@@ -6,9 +6,9 @@ using namespace std;
 int main()
 {
 	unsigned int n, temp;
-  	bool * array;
+  	bool *array;
 
-  	cin >> n;
+  	cin>>n;
   	array = new bool[n + 1];
   	for(unsigned int i = 2; i <= n; i++)
       	array[i] = true;  
@@ -20,7 +20,7 @@ int main()
           	while(temp <= n)
           	{
               	array[temp] = false;
-				temp += i;
+		temp += i;
           	}
       	}
       	
