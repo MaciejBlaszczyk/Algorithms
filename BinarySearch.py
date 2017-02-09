@@ -9,24 +9,24 @@ array = a.split()
 answers = []
 
 
-def binary_search(array, number, length_of_array):
+def binarySearch(array, number, arrayLength):
     first = 0
-    last = length_of_array - 1
+    last = arrayLength - 1
     while first <= last:
-        midpoint = (first + last) // 2
-        if array[midpoint] == number:
-            while midpoint > 0 and (array[midpoint] == array[midpoint - 1]):
-                midpoint -= 1
-            return str(midpoint + 1)
+        midPoint = (first + last) // 2
+        if array[midPoint] == number:
+            while midPoint > 0 and (array[midPoint] == array[midPoint - 1]):
+                midPoint -= 1
+            return str(midPoint + 1)
         else:
-            if number < array[midpoint]:
-                last = midpoint - 1
+            if number < array[midPoint]:
+                last = midPoint - 1
             else:
-                first = midpoint + 1
+                first = midPoint + 1
     return '-1'
 
 
 for number in questions:
-    answers.append(binary_search(array, number, len(array)))
+    answers.append(binarySearch(array, number, len(array)))
 
 print(" ".join(answers))
