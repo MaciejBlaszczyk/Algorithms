@@ -2,7 +2,7 @@
 
 using namespace std;
 
-long long Binary_Search(long long * array, long long number, long long arrayLength);
+long long binarySearch(long long *array, long long number, long long arrayLength);
 
 int main() 
 {
@@ -10,35 +10,36 @@ int main()
     long long questions;
     cin>>n>>questions;
 
-    long long * array = new long long[n];
-    long long * questions_array = new long long[questions];
+    long long *array = new long long[n];
+    long long *questionsArray = new long long[questions];
 
     for (long long i = 0; i < n; i++)
-        cin >> array[i];
+        cin>>array[i];
     for (long long i = 0; i < questions; i++)
-        cin >> questions_array[i];
+        cin>>questionsArray[i];
     for (long long i = 0; i < questions; i++)
-        cout <<Binary_Search(array, questions_array[i], n)<< " ";
+        cout<<binarySearch(array, questionsArray[i], n)<< " ";
 }
 
-long long Binary_Search(long long * array, long long number, long long length_of_array) 
+long long binarySearch(long long *array, long long number, long long arrayLength) 
 {
     long long first = 0;
-    long long last = length_of_array - 1;
+    long long last = arrayLength - 1;
     while (first <= last) 
     {
-        long long midpoint = (first + last)/2;
-        if (array[midpoint] == number) 
+        long long midPoint = (first + last)/2;
+        if (array[midPoint] == number) 
         {
-            while (midpoint > 0 && (array[midpoint] == array[midpoint-1]))
-                midpoint--;           
-            return midpoint + 1;
+            while (midPoint > 0 && (array[midPoint] == array[midPoint-1]))
+                midPoint--;           
+            return midPoint + 1;
         }
-        else {
-            if (number < array[midpoint])
-                last = midpoint - 1;
+        else 
+        {
+            if (number < array[midPoint])
+                last = midPoint - 1;
             else
-                first = midpoint + 1;
+                first = midPoint + 1;
         }
     }
     return -1;
